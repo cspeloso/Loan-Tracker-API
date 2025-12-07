@@ -1,3 +1,5 @@
+using FinanceAPI.Models;
+
 namespace FinanceAPI
 {
 
@@ -9,19 +11,23 @@ namespace FinanceAPI
 
             // Add services to the container.
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            builder.Services.AddOpenApi();
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
-                app.MapOpenApi();
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
 
             // app.UseHttpsRedirection();
 
             app.MapGet("/loans", () =>
             {
-                var forecast = Enumerable.Range(1, 5).Select(index =>
+                var currentLoans = Enumerable.Range(1, 5).Select(index =>
                     new Loan
                     {
                         Id = index,
@@ -33,26 +39,30 @@ namespace FinanceAPI
                         MonthlyPayment = 461
                     })
                     .ToArray();
-                return forecast;
+                return currentLoans;
             })
             .WithName("GetLoans");
 
+            
+            app.MapPost("/loans", (CreateLoanRequest request) =>
+            {
+                var loan = new Loan
+                {
+                    Id = Random.Shared.Next(1000, 9999),
+                    Name = request.Name,
+                    Principal = request.Principal,
+                    InterestRate = request.InterestRate,
+                    TermInMonths = request.TermInMonths,
+                    MonthlyPayment = request.MonthlyPayment,
+                    StartDate = request.StartDate
+                };
+
+                return Results.Created($"/loans/{loan.Id}", loan);
+            })
+            .WithName("CreateLoan");
 
 
             app.Run();
         }
     }
 }
-
-
-
-public record CreateLoanRequest(
-    string Name, 
-    decimal Principal, 
-    decimal InterestRate,
-    int TermInMonths,
-    decimal MonthlyPayment,
-    DateTime StartDate
-);
-
-public record CreatePaymentRequest(decimal Amount, DateTime PaymentDate);

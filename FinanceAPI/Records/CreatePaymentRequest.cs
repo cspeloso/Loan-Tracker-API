@@ -1,0 +1,1 @@
+public record CreatePaymentRequest(decimal Amount, DateTime PaymentDate);
