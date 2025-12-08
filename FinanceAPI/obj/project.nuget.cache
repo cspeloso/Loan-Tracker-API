@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "T2onaDGk7nw=",
+  "dgSpecHash": "HBj0MJqmdiM=",
   "success": true,
   "projectFilePath": "/Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/FinanceAPI.csproj",
   "expectedPackageFiles": [
@@ -49,10 +49,7 @@
     "/Users/chris/.nuget/packages/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "/Users/chris/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
     "/Users/chris/.nuget/packages/system.text.json/8.0.5/system.text.json.8.0.5.nupkg.sha512",
-    "/Users/chris/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512",
-    "/Users/chris/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.14/microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512",
-    "/Users/chris/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.14/microsoft.netcore.app.host.osx-arm64.8.0.14.nupkg.sha512",
-    "/Users/chris/.nuget/packages/microsoft.netcore.app.ref/8.0.14/microsoft.netcore.app.ref.8.0.14.nupkg.sha512"
+    "/Users/chris/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,6 +1,5 @@
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/bin/Debug/net8.0/appsettings.Development.json
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/bin/Debug/net8.0/appsettings.json
-/Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/bin/Debug/net8.0/FinanceAPI.staticwebassets.endpoints.json
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/bin/Debug/net8.0/FinanceAPI
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/bin/Debug/net8.0/FinanceAPI.deps.json
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/bin/Debug/net8.0/FinanceAPI.runtimeconfig.json
@@ -93,9 +92,7 @@
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/obj/Debug/net8.0/scopedcss/bundle/FinanceAPI.styles.css
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/obj/Debug/net8.0/staticwebassets.build.json
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/obj/Debug/net8.0/staticwebassets.development.json
-/Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/obj/Debug/net8.0/staticwebassets.build.endpoints.json
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/obj/Debug/net8.0/staticwebassets/msbuild.FinanceAPI.Microsoft.AspNetCore.StaticWebAssets.props
-/Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/obj/Debug/net8.0/staticwebassets/msbuild.FinanceAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/obj/Debug/net8.0/staticwebassets/msbuild.build.FinanceAPI.props
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.FinanceAPI.props
 /Users/chris/Documents/code/APIs/finance.chrispeloso.com/FinanceAPI/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.FinanceAPI.props

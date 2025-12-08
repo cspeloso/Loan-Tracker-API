@@ -7,3 +7,23 @@ services:
     ports:
       - "8080:8080"
     restart: unless-stopped
+    environment:
+      ConnectionStrings__Default: Host=postgres;Port=5432;Database=finance;Username=finance;Password=finance
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: finance
+      POSTGRES_PASSWORD: finance
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
