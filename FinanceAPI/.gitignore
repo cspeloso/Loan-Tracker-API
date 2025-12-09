@@ -1,0 +1,67 @@
+# =========================
+# .NET / Visual Studio
+# =========================
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# =========================
+# Build outputs
+# =========================
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+arm/
+arm64/
+
+# =========================
+# Rider / VS Code
+# =========================
+.idea/
+.vscode/
+
+# =========================
+# macOS
+# =========================
+.DS_Store
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Docker
+# =========================
+**/docker-compose.override.yml
+
+# =========================
+# Environment secrets
+# =========================
+appsettings.Development.json
+.env
+.env.*
+!.env.example
+
+# =========================
+# User-specific files
+# =========================
+*.swp
+*.tmp
+*.temp
+
+# =========================
+# HTTP scratch files
+# =========================
+*.http
+
+# =========================
+# EF Core
+# =========================
+**/Migrations/*Snapshot.cs
