@@ -24,7 +24,7 @@ public class LoansController : ControllerBase
             InterestRate = request.InterestRate,
             TermInMonths = request.TermInMonths,
             MonthlyPayment = request.MonthlyPayment,
-            StartDate = request.StartDate
+            StartDate = DateTime.SpecifyKind(request.StartDate, DateTimeKind.Utc)
         };
 
         _db.Loans.Add(loan);
