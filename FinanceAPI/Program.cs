@@ -11,8 +11,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         //  register DB Context 
-        builder.Services.AddDbContext<FinanceDbContext>(options =>
-            options.UseNpgsql(builder.Configuration.GetConnectionString("default")));
+        builder.Services.AddDbContext<FinanceDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 
         // Add services to the container.
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
