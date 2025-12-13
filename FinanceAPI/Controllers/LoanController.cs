@@ -4,6 +4,8 @@ using FinanceAPI.Models;
 using FinanceAPI.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 [ApiController]
 [Route("loans")]
@@ -38,6 +40,53 @@ public class LoansController : ControllerBase
     #region GETs
     [HttpGet]
     public async Task<List<Loan>> GetLoans() => await _db.Loans.ToListAsync();
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<Loan>> GetLoan(int id)
+    {
+        var loan = await _db.Loans.FindAsync(id);
+        return loan is null ? NotFound() : Ok(loan);
+    }
     #endregion GETs
 
+    #region PUTs
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateLoan(int id, [FromBody] UpdateLoanRequest request)
+    {
+        var startUtc = DateTime.SpecifyKind(request.StartDate, DateTimeKind.Utc);
+
+        var rows = await _db.Loans
+            .Where(x => x.Id == id)
+            .ExecuteUpdateAsync(setters => setters
+                .SetProperty(x => x.Name, request.Name)
+                .SetProperty(x => x.Principal, request.Principal)
+                .SetProperty(x => x.InterestRate, request.InterestRate)
+                .SetProperty(x => x.TermInMonths, request.TermInMonths)
+                .SetProperty(x => x.MonthlyPayment, request.MonthlyPayment)
+                .SetProperty(x => x.StartDate, startUtc)
+            );
+
+        return rows == 0 ? NotFound() : NoContent();
+    }
+    #endregion
+
+    #region DELETEs
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteLoan(int id)
+    {
+        var rows = await _db.Loans.Where(x => x.Id == id).ExecuteDeleteAsync();
+
+        return rows == 0 ? NotFound() : NoContent();
+    }
+    #endregion
+
+
+    public sealed class UpdateLoanRequest
+    {
+        public string Name { get; set; } = "";
+        public decimal Principal { get; set; }
+        public decimal InterestRate { get; set; }
+        public int TermInMonths { get; set; }
+        public decimal MonthlyPayment { get; set; }
+        public DateTime StartDate { get; set; }
+    }
 }
